@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 # 练习excel表格读取
 # 数据统计和直方图，平均值，偏差和方差
 # 散点图
-table=pd.read_excel('elmeter.xls',sheetname='Sheet6')
+table=pd.read_excel('elmeter.xls',sheetname='Sheet4')
 #  arr1=np.array(table)
 #  print arr1.mean()
 #  print arr1.std()
@@ -87,5 +87,12 @@ plt.annotate(r'$Line of 350W/m^2$',
 
 
 plt.show()
+
+a=np.linspace(0,2*np.pi,360*4)
+x=sin(a)
+y=cos(a)
+plt.plot(x,y)
+plt.show()
+
 #
 #
