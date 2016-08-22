@@ -32,37 +32,37 @@ while a==1:
         y=random.randint(2,9)
         x=y*ans
     print " "*24+str(x)+oprator[op]+str(y)+'='
-    answer=raw_input("Please enter the answer:")
+    answer=raw_input("     你的计算结果是:")
     end=time.time()
     if answer.isdigit():
         if int(answer)==ans:
             r+=1
-            print "Right:"+str(r)+"   Wrong:"+str(w)
-            print "Time cost total:"+str(end-start)
-            print "Time cost last:"+str(end-thisstart)
-            print "Average cost:"+str((end-start)/(r+w))
-            print "Correct ratio:"+str(float(r)/(r+w))
-            print "Good!"
+            print "答对:"+str(r)+"   答错:"+str(w)
+            print "总耗时:"+str(end-start)
+            print "上一题耗时:"+str(end-thisstart)
+            print "平均耗时:"+str((end-start)/(r+w))
+            print "答对率:"+str(float(r)/(r+w)*100)+"%"
+            print "                答对了!"
             print '======================================='
         else:
             w+=1
-            print "Right:"+str(r)+"   Wrong:"+str(w)
-            print "Time cost total:"+str(end-start)
-            print "Time cost last:"+str(end-thisstart)
-            print "Average cost:"+str((end-start)/(r+w))
-            print "Correct ratio:"+str(float(r)/(r+w))
-            print "Wrong!! The answer is "+str(ans)
+            print "答对:"+str(r)+"   答错:"+str(w)
+            print "总耗时:"+str(end-start)
+            print "上一题耗时:"+str(end-thisstart)
+            print "平均耗时:"+str((end-start)/(r+w))
+            print "答对率:"+str(float(r)/(r+w)*100)+"%"
+            print "          算错了!! 正确答案是 "+str(ans)
             print '======================================='
     else:
         if answer=='stop':
             if r+w==0 :break
-            print "Right:"+str(r)+"   Wrong:"+str(w)
-            print "Time cost total:"+str(end-start)
-            print "Time cost last:"+str(end-thisstart)
-            print "Average cost:"+str((end-start)/(r+w))
-            print "Correct ratio:"+str(float(r)/(r+w))
+            print "答对:"+str(r)+"   答错:"+str(w)
+            print "总耗时:"+str(end-start)
+            print "上一题耗时:"+str(end-thisstart)
+            print "平均耗时:"+str((end-start)/(r+w))
+            print "答对率:"+str(float(r)/(r+w)*100)+"%"
             print "BYE!"
             break
         else:
-            print "wrong input."
+            print "字符输入错误."
 
