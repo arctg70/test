@@ -2,6 +2,7 @@
 #coding=utf-8
 import random
 import time
+import datetime
 start=time.time()
 a=1
 r=0
@@ -56,11 +57,19 @@ while a==1:
     else:
         if answer=='stop':
             if r+w==0 :break
+            timestamp=str(datetime.datetime.now())
+            totaltime=end-start
+            avaragetime=(end-start)/(r+w)
+            corr_ratio=float(r)/(r+w)*100
             print " "*5+"答对:"+str(r)+"   答错:"+str(w)
-            print " "*5+"总耗时:    %.2fs" % (end-start)
+            print " "*5+"总耗时:    %.2fs" % (totaltime)
             print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
-            print " "*5+"平均耗时:  %.2fs" % ((end-start)/(r+w))
-            print " "*5+"答对率:    %.2f%%" % (float(r)/(r+w)*100)
+            print " "*5+"平均耗时:  %.2fs" % (avaragetime)
+            print " "*5+"答对率:    %.2f%%" % (corr_ratio)
+            f=open('record.txt','a+')
+            rec='%s\t%d\t%d\t%.2f\t%.2f\t%.2f\n' % (timestamp,r,w,totaltime,avaragetime,corr_ratio)
+            f.write(rec)
+            f.close()
             print "BYE!"
             break
         else:
