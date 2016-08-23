@@ -28,7 +28,7 @@ while a==1:
         y=random.randint(2,9)
         ans=x*y
     if op==3:
-        ans=random.randint(2,100)
+        ans=random.randint(2,1000)
         y=random.randint(2,9)
         x=y*ans
     print " "*24+str(x)+oprator[op]+str(y)+'='
@@ -37,30 +37,30 @@ while a==1:
     if answer.isdigit():
         if int(answer)==ans:
             r+=1
-            print "答对:"+str(r)+"   答错:"+str(w)
-            print "总耗时:"+str(end-start)
-            print "上一题耗时:"+str(end-thisstart)
-            print "平均耗时:"+str((end-start)/(r+w))
-            print "答对率:"+str(float(r)/(r+w)*100)+"%"
+            print " "*5+"答对:"+str(r)+"   答错:"+str(w)
+            print " "*5+"总耗时:    %.2fs" % (end-start)
+            print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
+            print " "*5+"平均耗时:  %.2fs" % ((end-start)/(r+w))
+            print " "*5+"答对率:    %.2f%%" % (float(r)/(r+w)*100)
             print "                答对了!"
             print '======================================='
         else:
             w+=1
-            print "答对:"+str(r)+"   答错:"+str(w)
-            print "总耗时:"+str(end-start)
-            print "上一题耗时:"+str(end-thisstart)
-            print "平均耗时:"+str((end-start)/(r+w))
-            print "答对率:"+str(float(r)/(r+w)*100)+"%"
+            print " "*5+"答对:"+str(r)+"   答错:"+str(w)
+            print " "*5+"总耗时:    %.2fs" % (end-start)
+            print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
+            print " "*5+"平均耗时:  %.2fs" % ((end-start)/(r+w))
+            print " "*5+"答对率:    %.2f%%" % (float(r)/(r+w)*100)
             print "          算错了!! 正确答案是 "+str(ans)
             print '======================================='
     else:
         if answer=='stop':
             if r+w==0 :break
-            print "答对:"+str(r)+"   答错:"+str(w)
-            print "总耗时:"+str(end-start)
-            print "上一题耗时:"+str(end-thisstart)
-            print "平均耗时:"+str((end-start)/(r+w))
-            print "答对率:"+str(float(r)/(r+w)*100)+"%"
+            print " "*5+"答对:"+str(r)+"   答错:"+str(w)
+            print " "*5+"总耗时:    %.2fs" % (end-start)
+            print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
+            print " "*5+"平均耗时:  %.2fs" % ((end-start)/(r+w))
+            print " "*5+"答对率:    %.2f%%" % (float(r)/(r+w)*100)
             print "BYE!"
             break
         else:
