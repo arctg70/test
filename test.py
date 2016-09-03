@@ -12,6 +12,7 @@ print s.rsplit(' ')
 
 print s.upper()
 
+print s.islower()
 
 print s.lower()
 
@@ -34,7 +35,7 @@ s1=list(s)     #打散为列表
 print s1
 
 L=s.split(" ")
-s1=''.join(L)              #连接
+s1=''.join(L)              #连接试验
 s2="[Delimet]".join(L)
 print s1
 print s2
