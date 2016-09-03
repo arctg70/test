@@ -47,6 +47,7 @@ data_name=data.set_index('NAME')
 #
 x=data[['AREA']]
 y=data[['LOAD']]
+print x[0:3]
 plt.figure()
 plt.plot(x,y,
     linestyle='',
@@ -88,11 +89,3 @@ plt.annotate(r'$Line of 350W/m^2$',
 
 plt.show()
 
-a=np.linspace(0,2*np.pi,360*4)
-x=sin(a)
-y=cos(a)
-plt.plot(x,y)
-plt.show()
-
-#
-#
