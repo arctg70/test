@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from pandas import to_datetime
 import matplotlib.pyplot as plt
-table=pd.read_csv('hrecord.txt', parse_dates='timestamp',delimiter='\t' )
+table=pd.read_csv('record.txt', parse_dates='timestamp',delimiter='\t' )
 x = to_datetime(np.array(table['timestamp']))
 avaragetime=table['avaragetime']
 corr_ratio=table['corr_ratio']

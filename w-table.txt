@@ -1,5 +1,5 @@
  	In	Out	Total	
-This hour	1.75 MB	1.88 MB	3.63 MB	
-This day	226.30 MB	240.59 MB	466.89 MB	
-This month	10.84 GB	12.84 GB	23.68 GB	
-All time	182.02 GB	241.66 GB	423.68 GB	
+This hour	19.50 MB	20.99 MB	40.49 MB	
+This day	374.51 MB	392.15 MB	766.67 MB	
+This month	1.20 GB	1.29 GB	2.50 GB	
+All time	184.38 GB	244.12 GB	428.50 GB	

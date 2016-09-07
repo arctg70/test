@@ -29,6 +29,6 @@ for phi in np.linspace(0, 360 / 2 / np.pi, 100):
      # Remove old line collection before drawing
      if oldcol is not None:
             ax.collections.remove(oldcol)
-     plt.pause(.001)
+     plt.pause(.0055555)
 
 print('FPS: %f' % (100 / (time.time() - tstart)))

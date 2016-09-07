@@ -13,26 +13,35 @@ oprator='+-*/'
 print '======================================='
 while a==1:
     thisstart=time.time()
-    op=random.randint(0,3)
+    op=random.randint(0,4)
     if op==0:
         x=random.randint(0,1000)
         y=random.randint(0,1000)
         ans=x+y
+        print " "*24+str(x)+oprator[op]+str(y)+'='
     if op==1:
         x=random.randint(0,1000)
         y=random.randint(0,1000)
         while x<y:
             y=random.randint(0,1000)
         ans=x-y
+        print " "*24+str(x)+oprator[op]+str(y)+'='
     if op==2:
         x=random.randint(1,1000)
         y=random.randint(2,9)
         ans=x*y
+        print " "*24+str(x)+oprator[op]+str(y)+'='
     if op==3:
         ans=random.randint(2,1000)
         y=random.randint(2,9)
         x=y*ans
-    print " "*24+str(x)+oprator[op]+str(y)+'='
+        print " "*24+str(x)+oprator[op]+str(y)+'='
+    if op==4:
+        x=random.randint(1,1000)
+        y=random.randint(1,1000)
+        z=random.randint(1,100)
+        ans=x+y*z
+        print " "*24+str(x)+'+'+str(y)+'*'+str(z)+'='
     answer=raw_input("     你的计算结果是:")
     end=time.time()
     if answer.isdigit():
