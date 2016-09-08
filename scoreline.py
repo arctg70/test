@@ -12,12 +12,13 @@ corr_ratio=table['corr_ratio']
 plt.plot_date(x,avaragetime,
     linestyle='-',
     xdate=True,ydate=False,
-    color='red',)
+    color='red',label='AverageTime(s)')
 plt.plot_date(x,corr_ratio,
     linestyle='-',
     xdate=True,ydate=False,
-    color='green',)
+    color='green',label='Correct_Ratio(%)')
 plt.yticks(range(0,101,5))
 plt.grid()
+plt.legend(loc='center right')
 plt.show()
 
