@@ -13,35 +13,38 @@ oprator='+-*/'
 print '======================================='
 while a==1:
     thisstart=time.time()
-    op=random.randint(0,4)
+    op=random.randint(0,3)
     if op==0:
         x=random.randint(0,1000)
         y=random.randint(0,1000)
         ans=x+y
-        print " "*24+str(x)+oprator[op]+str(y)+'='
+        s=" "*24+str(x)+oprator[op]+str(y)+'='
+        print s
     if op==1:
         x=random.randint(0,1000)
-        y=random.randint(0,1000)
-        while x<y:
-            y=random.randint(0,1000)
+        y=random.randint(0,x)
         ans=x-y
-        print " "*24+str(x)+oprator[op]+str(y)+'='
+        s=" "*24+str(x)+oprator[op]+str(y)+'='
+        print s
     if op==2:
         x=random.randint(1,1000)
         y=random.randint(2,9)
         ans=x*y
-        print " "*24+str(x)+oprator[op]+str(y)+'='
+        s=" "*24+str(x)+oprator[op]+str(y)+'='
+        print s
     if op==3:
         ans=random.randint(2,1000)
         y=random.randint(2,9)
         x=y*ans
-        print " "*24+str(x)+oprator[op]+str(y)+'='
+        s=" "*24+str(x)+oprator[op]+str(y)+'='
+        print s
     if op==4:
         x=random.randint(1,1000)
         y=random.randint(1,1000)
         z=random.randint(1,100)
         ans=x+y*z
-        print " "*24+str(x)+'+'+str(y)+'*'+str(z)+'='
+        s=" "*24+str(x)+'+'+str(y)+'*'+str(z)+'='
+        print s
     answer=raw_input("     你的计算结果是:")
     end=time.time()
     if answer.isdigit():
@@ -53,7 +56,7 @@ while a==1:
             print " "*5+"平均耗时:  %.2fs" % ((end-start)/(r+w))
             print " "*5+"答对率:    %.2f%%" % (float(r)/(r+w)*100)
             print "                答对了!"
-            print '======================================='
+            pprint '======================================='
         else:
             w+=1
             print " "*5+"答对:"+str(r)+"   答错:"+str(w)
@@ -63,6 +66,10 @@ while a==1:
             print " "*5+"答对率:    %.2f%%" % (float(r)/(r+w)*100)
             print "          算错了!! 正确答案是 "+str(ans)
             print '======================================='
+            f=open('wrongrec.txt','a+')
+            wrongrec='%s\t%s\t%s\t%s\n' % (str(op),s[24:],str(ans),answer)
+            f.write(wrongrec)
+            f.close()
     else:
         if answer=='stop':
             if r+w==0 :break
