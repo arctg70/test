@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def f(x,y):
-    #  R=np.sqrt(x**2+y**2)
-    #  return np.sin(R)
-    return (1-x/2+x**5+y**3)*np.exp(-x**2-y**2)
+    R=np.sqrt(x**2+y**2)
+    return np.sin(R)
+    #  return (1-x/2+x**5+y**3)*np.exp(-x**2-y**2)
 fig = plt.figure()
 ax = fig.gca(projection='3d')
 X = np.arange(-3, 3, 0.05)
