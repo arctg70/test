@@ -4,11 +4,27 @@ import numpy as np
 import pandas as pd
 from pandas import to_datetime
 import matplotlib.pyplot as plt
+import pylab as pl
+
+# 错误分布柱状图
+wtable=pd.read_csv('wrongrec.txt',delimiter='\t')
+counts=wtable['op'].value_counts()
+pl=counts.plot(kind='bar').get_figure()
+pl.show()
+
+
+
+
+#  import numpy as np
+#  import pandas as pd
+#  from pandas import to_datetime
+#  import matplotlib.pyplot as plt
+# 平均时间和正确率图
 table=pd.read_csv('record.txt', parse_dates='timestamp',delimiter='\t' )
 x = to_datetime(np.array(table['timestamp']))
 avaragetime=table['avaragetime']
 corr_ratio=table['corr_ratio']
-#  plt.figure()
+plt.figure()
 plt.plot_date(x,avaragetime,
     linestyle='-',
     xdate=True,ydate=False,
@@ -22,3 +38,4 @@ plt.grid()
 plt.legend(loc='center right')
 plt.show()
 
+#
