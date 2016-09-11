@@ -9,7 +9,7 @@ import pylab as pl
 # 错误分布柱状图
 wtable=pd.read_csv('wrongrec.txt',delimiter='\t')
 counts=wtable['op'].value_counts()
-pl=counts.plot(kind='bar').get_figure()
+pl=counts.plot(kind='bar',color='red',alpha=0.6).get_figure()
 pl.show()
 
 
