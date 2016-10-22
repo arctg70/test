@@ -10,14 +10,11 @@ from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import matplotlib.pyplot as plt
 import numpy as np
 
-img=np.array(Image.open('hole.png').convert('L'))
+img=np.array(Image.open('julia0.0.jpg').convert('L'))
 
-
-print img.shape
-print img.shape[0]
 sig_fft=fftpack.fft2(img)
 fshift=np.fft.fftshift(sig_fft)
-#  fshift=sig_fft
+#fshift=sig_fft
 #  noisex=200
 #  noisey=290
 #  fshift[:noisex,:]=0
@@ -42,7 +39,7 @@ fig = plt.figure()
 #
 #  plt.show()
 plt.imshow(fft2_img,'gray')
-
+#plt.imshow(fft2_orgimg,'gray')
 #  print fft2_orgimg
 #
 #  plt.imshow(imgrr,'gray')
