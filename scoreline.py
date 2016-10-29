@@ -35,7 +35,7 @@ plt.plot_date(x,corr_ratio,
     color='green',label='Correct_Ratio(%)')
 plt.yticks(range(0,101,5))
 plt.grid()
-plt.legend(loc='center right')
+plt.legend(loc='center left')
 plt.show()
 
 #

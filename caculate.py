@@ -13,7 +13,7 @@ oprator='+-*/'
 print '======================================='
 while a==1:
     thisstart=time.time()
-    op=random.randint(4,7)
+    op=random.randint(8,8)
     if op==0:
         x=random.randint(0,1000)
         y=random.randint(0,1000)
@@ -65,6 +65,13 @@ while a==1:
         z=random.randint(1,100)
         ans=(x-y)*z
         s=" "*24+'('+str(x)+'-'+str(y)+')*'+str(z)+'='
+        print s
+    if op==8:
+        x=random.randint(100,1000)
+        y=random.randint(11,99)
+        z=random.randint(1,100)
+        ans=x*y
+        s=" "*24+str(x)+'*'+str(y)+'='
         print s
     answer=raw_input("     你的计算结果是:")
     end=time.time()
