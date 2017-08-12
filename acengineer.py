@@ -23,6 +23,7 @@ def dewpoint(Temp,RH):
     :RH: 相对湿度
     :returns: 空气露点
 
+
     """
     import math
     a=17.27
@@ -30,6 +31,8 @@ def dewpoint(Temp,RH):
     R=a*Temp/(b+Temp)+math.log(RH/100.0)
     dewpoint=b*R/(a-R)
     return dewpoint
+
+# 测试
 
 #  print delta_box(0.035,29.,75.,9.)*1000, dewpoint(25,75)
 
