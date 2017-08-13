@@ -13,3 +13,5 @@ print HKDrate(2)
 print exchange.HKDrate(2)
 print exchange.HKDrate(1)
 print dir(exchange)
+#ok
+
