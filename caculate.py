@@ -1,4 +1,4 @@
-? /usr/bin/env python
+#! /usr/bin/env python
 #coding=utf-8
 import random
 import time
@@ -13,7 +13,7 @@ oprator='+-*/'
 print '======================================='
 while a==1:
     thisstart=time.time()
-    op=random.randint(8,8)
+    op=random.randint(8,9)
     if op==0:
         x=random.randint(0,1000)
         y=random.randint(0,1000)
@@ -73,26 +73,32 @@ while a==1:
         ans=x*y
         s=" "*24+str(x)+'*'+str(y)+'='
         print s
-    answer=raw_input("     ÄãµÄ¼ÆËã½á¹û•^)
+    if op==9:
+        ans=random.randint(1,100)
+        y=random.randint(11,99)
+        x=ans*y
+        s=" "*24+str(x)+'/'+str(y)+'='
+        print s
+	answer=raw_input("     ä½ çš„è®¡ç®—ç»“æœ:")
     end=time.time()
     if answer.isdigit():
         if int(answer)==ans:
             r+=1
-            print " "*5+"ÕıÈ·:"+str(r)+"   ´íÎó:"+str(w)
-            print " "*5+"×ÜºÄÊ±:    %.2fs" % (end-start)
-            print " "*5+"ÉÏÒ»ÌâºÄÊ±:%.2fs" % (end-thisstart)
-            print " "*5+"Æ½¾ùºÄÊ±:  %.2fs" % ((end-start)/(r+w))
-            print " "*5+"ÕıÈ·«d   %.2f%%" % (float(r)/(r+w)*100)
-            print "                ´ğ¶Ô¿º
+            print " "*5+"æ­£ç¡®:"+str(r)+"   é”™è¯¯:"+str(w)
+            print " "*5+"æ€»è€—æ—¶:    %.2fs" % (end-start)
+            print " "*5+"ä¸Šä¸€é¢˜è€—æ—¶:%.2fs" % (end-thisstart)
+            print " "*5+"å¹³å‡è€—æ—¶:  %.2fs" % ((end-start)/(r+w))
+            print " "*5+"æ­£ç¡®ç‡   %.2f%%" % (float(r)/(r+w)*100)
+            print "                ç­”å¯¹äº†ï¼"
             print '======================================='
         else:
             w+=1
-            print " "*5+"ÕıÈ·:"+str(r)+"   ´íÎó:"+str(w)
-            print " "*5+"×ÜºÄÊ±:    %.2fs" % (end-start)
-            print " "*5+"ÉÏÒ»ÌâºÄÊ±:%.2fs" % (end-thisstart)
-            print " "*5+"Æ½¾ùºÄÊ±:  %.2fs" % ((end-start)/(r+w))
-            print " "*5+"ÕıÈ·«d   %.2f%%" % (float(r)/(r+w)*100)
-            print "          Ëã´íÍö ÕıÈ·´ğ°¸•^+str(ans)
+            print " "*5+"æ­£ç¡®:"+str(r)+"   é”™è¯¯:"+str(w)
+            print " "*5+"æ€»è€—æ—¶:    %.2fs" % (end-start)
+            print " "*5+"ä¸Šä¸€é¢˜è€—æ—¶:%.2fs" % (end-thisstart)
+            print " "*5+"å¹³å‡è€—æ—¶:  %.2fs" % ((end-start)/(r+w))
+            print " "*5+"æ­£ç¡®ç‡   %.2f%%" % (float(r)/(r+w)*100)
+            print "          ç®—é”™äº†ï¼ æ­£ç¡®ç­”æ¡ˆæ˜¯"+str(ans)
             print '======================================='
             f=open('wrongrec.txt','a+')
             wrongrec='%s\t%s\t%s\t%s\n' % (str(op),s[24:],str(ans),answer)
@@ -105,11 +111,11 @@ while a==1:
             totaltime=end-start
             avaragetime=(end-start)/(r+w)
             corr_ratio=float(r)/(r+w)*100
-            print " "*5+"ÕıÈ·:"+str(r)+"   ´íÎó:"+str(w)
-            print " "*5+"×ÜºÄÊ±:    %.2fs" % (totaltime)
-            print " "*5+"ÉÏÒ»ÌâºÄÊ±:%.2fs" % (end-thisstart)
-            print " "*5+"Æ½¾ùºÄÊ±:  %.2fs" % (avaragetime)
-            print " "*5+"ÕıÈ·«d   %.2f%%" % (corr_ratio)
+            print " "*5+"æ­£ç¡®:"+str(r)+"   é”™è¯¯:"+str(w)
+            print " "*5+"æ€»è€—æ—¶:    %.2fs" % (totaltime)
+            print " "*5+"ä¸Šä¸€é¢˜è€—æ—¶:%.2fs" % (end-thisstart)
+            print " "*5+"å¹³å‡è€—æ—¶:  %.2fs" % (avaragetime)
+            print " "*5+"æ­£ç¡®ç‡   %.2f%%" % (corr_ratio)
             f=open('record.txt','a+')
             rec='%s\t%d\t%d\t%.2f\t%.2f\t%.2f\n' % (timestamp,r,w,totaltime,avaragetime,corr_ratio)
             f.write(rec)
@@ -117,5 +123,5 @@ while a==1:
             print "BYE!"
             break
         else:
-            print "??????."
+            print "è¾“å…¥é”™è¯¯ã€‚"
 
