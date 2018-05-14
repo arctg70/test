@@ -8,7 +8,7 @@ a=1
 r=0
 w=0
 repeat=0
-op=0
+op=op=random.randint(8,9)
 oprator='+-*/'
 
 print '======================================='
