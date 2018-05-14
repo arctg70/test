@@ -7,13 +7,17 @@ start=time.time()
 a=1
 r=0
 w=0
-
+repeat=0
 oprator='+-*/'
 
 print '======================================='
 while a==1:
-    thisstart=time.time()
-    op=random.randint(8,9)
+	if repeat==0:
+		thisstart=time.time()
+		op=random.randint(8,9)
+	else:
+		op=999
+		repeat=0
     if op==0:
         x=random.randint(0,1000)
         y=random.randint(0,1000)
@@ -123,5 +127,8 @@ while a==1:
             print "BYE!"
             break
         else:
-            print "输入错误。"
+            print "输入错误。请重新输入。"
+			repeat=1
+			
+			
 
