@@ -79,7 +79,7 @@ while a==1:
         x=ans*y
         s=" "*24+str(x)+'/'+str(y)+'='
         print s
-	answer=raw_input("     你的计算结果:")
+    answer=raw_input("     你的计算结果:")
     end=time.time()
     if answer.isdigit():
         if int(answer)==ans:
