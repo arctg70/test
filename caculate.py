@@ -129,7 +129,7 @@ while a==1:
             break
         else:
             print "输入错误。请重新输入。"
-	    repeat=1
+			repeat=1
 			
 			
 
