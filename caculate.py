@@ -8,17 +8,18 @@ a=1
 r=0
 w=0
 repeat=0
-op=op=random.randint(8,9)
+#op=random.randint(8,9)
 oprator='+-*/'
 
 print '======================================='
 while a==1:
     if repeat==0:
-	thisstart=time.time()
-	op=random.randint(8,9)
+		thisstart=time.time()
+		op=random.randint(8,9)
     else:
-	op=999
-	repeat=0
+		repeat=0
+		tempop=op
+		op=999
     if op==0:
         x=random.randint(0,1000)
         y=random.randint(0,1000)
@@ -84,31 +85,27 @@ while a==1:
         x=ans*y
         s=" "*24+str(x)+'/'+str(y)+'='
         print s
+	if op==999:
+		op=tempop
     answer=raw_input("     你的计算结果:")
     end=time.time()
     if answer.isdigit():
         if int(answer)==ans:
             r+=1
-            print " "*5+"正确:"+str(r)+"   错误:"+str(w)
-            print " "*5+"总耗时:    %.2fs" % (end-start)
-            print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
-            print " "*5+"平均耗时:  %.2fs" % ((end-start)/(r+w))
-            print " "*5+"正确率   %.2f%%" % (float(r)/(r+w)*100)
             print "                答对了！"
-            print '======================================='
         else:
             w+=1
-            print " "*5+"正确:"+str(r)+"   错误:"+str(w)
-            print " "*5+"总耗时:    %.2fs" % (end-start)
-            print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
-            print " "*5+"平均耗时:  %.2fs" % ((end-start)/(r+w))
-            print " "*5+"正确率   %.2f%%" % (float(r)/(r+w)*100)
             print "          算错了！ 正确答案是"+str(ans)
-            print '======================================='
             f=open('wrongrec.txt','a+')
             wrongrec='%s\t%s\t%s\t%s\n' % (str(op),s[24:],str(ans),answer)
             f.write(wrongrec)
             f.close()
+        print " "*5+"正确:"+str(r)+"   错误:"+str(w)
+        print " "*5+"总耗时:    %.2fs" % (end-start)
+        print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
+        print " "*5+"平均耗时:  %.2fs" % ((end-start)/(r+w))
+        print " "*5+"正确率   %.2f%%" % (float(r)/(r+w)*100)
+        print '======================================='
     else:
         if answer=='stop':
             if r+w==0 :break
@@ -116,11 +113,11 @@ while a==1:
             totaltime=end-start
             avaragetime=(end-start)/(r+w)
             corr_ratio=float(r)/(r+w)*100
-            print " "*5+"正确:"+str(r)+"   错误:"+str(w)
-            print " "*5+"总耗时:    %.2fs" % (totaltime)
-            print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
-            print " "*5+"平均耗时:  %.2fs" % (avaragetime)
-            print " "*5+"正确率   %.2f%%" % (corr_ratio)
+#            print " "*5+"正确:"+str(r)+"   错误:"+str(w)
+#            print " "*5+"总耗时:    %.2fs" % (totaltime)
+#            print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
+#            print " "*5+"平均耗时:  %.2fs" % (avaragetime)
+#            print " "*5+"正确率   %.2f%%" % (corr_ratio)
             f=open('record.txt','a+')
             rec='%s\t%d\t%d\t%.2f\t%.2f\t%.2f\n' % (timestamp,r,w,totaltime,avaragetime,corr_ratio)
             f.write(rec)
