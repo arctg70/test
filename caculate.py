@@ -113,11 +113,6 @@ while a==1:
             totaltime=end-start
             avaragetime=(end-start)/(r+w)
             corr_ratio=float(r)/(r+w)*100
-#            print " "*5+"正确:"+str(r)+"   错误:"+str(w)
-#            print " "*5+"总耗时:    %.2fs" % (totaltime)
-#            print " "*5+"上一题耗时:%.2fs" % (end-thisstart)
-#            print " "*5+"平均耗时:  %.2fs" % (avaragetime)
-#            print " "*5+"正确率   %.2f%%" % (corr_ratio)
             f=open('record.txt','a+')
             rec='%s\t%d\t%d\t%.2f\t%.2f\t%.2f\n' % (timestamp,r,w,totaltime,avaragetime,corr_ratio)
             f.write(rec)
