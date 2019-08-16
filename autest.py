@@ -19,7 +19,7 @@ soup = BeautifulSoup(page, "html.parser")
 
 f = open('w-table.txt', 'w')
 for line in soup("table")[0]("tr"):
-#    print line
+    #    print line
     for cell in line(["th", "td"]):
         print cell.string.encode('utf-8')
         f.write(cell.string.encode('utf-8') + '\t')

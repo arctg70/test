@@ -1,28 +1,30 @@
 #! /usr/bin/env python
-#coding=utf-8
+# coding=utf-8
 # -*- coding: utf-8 -*-
 import time
-import Image, ImageDraw
+import Image
+import ImageDraw
 
-g_size = (1920, 1080) # 图形最终尺寸
-g_max_iteration = 1024 # 最大迭代次数
-g_bailout = 4 # 最大域
-g_zoom = 2.5 / g_size[0] # 缩放参数
-g_offset = (-g_size[0] * 0.25, 0) # 偏移量
-g_HSL = (210, 80, 50) # HSL色彩基调
+g_size = (1920, 1080)  # 图形最终尺寸
+g_max_iteration = 1024  # 最大迭代次数
+g_bailout = 4  # 最大域
+g_zoom = 2.5 / g_size[0]  # 缩放参数
+g_offset = (-g_size[0] * 0.25, 0)  # 偏移量
+g_HSL = (210, 80, 50)  # HSL色彩基调
 
-def draw(antialias = True):
-    zi = 2 if antialias else 1 # antialias: 抗锯齿 size = [i * zi
+
+def draw(antialias=True):
+    zi = 2 if antialias else 1  # antialias: 抗锯齿 size = [i * zi
     size = [i * zi for i in g_size]
     zoom = g_zoom / zi
-    offset = [i * zi  for i in g_offset]
+    offset = [i * zi for i in g_offset]
     bailout = g_bailout * zi
     img = Image.new("RGB", size, 0xffffff)
     dr = ImageDraw.Draw(img)
 
     print "painting Mandelbrot Set.."
     for xy, color in getPoints(size, offset, zoom):
-        dr.point(xy, fill = color)
+        dr.point(xy, fill=color)
     print "100%\n"
 
     del dr
@@ -31,7 +33,8 @@ def draw(antialias = True):
     img.show()
     img.save("mandelbrot_set_%dx%d.png" % g_size)
 
-def getPoints(size, offset, zoom, ti = 0, tstep = 1):
+
+def getPoints(size, offset, zoom, ti=0, tstep=1):
     "生成需要绘制的点的坐标及颜色"
 
     def getRepeats(c):
@@ -61,7 +64,7 @@ def getPoints(size, offset, zoom, ti = 0, tstep = 1):
     for iy in xrange(ys):
         p = iy * 100 / ys
         if iy % 10 == 0 and p != progress:
-            print ("%d%%..." % p) # 显示进度
+            print("%d%%..." % p)  # 显示进度
             progress = p
         for ix in xrange(ti, xs, tstep):
             x = (ix - xw + xo) * zoom
@@ -70,11 +73,13 @@ def getPoints(size, offset, zoom, ti = 0, tstep = 1):
             r = getRepeats(c)
             yield (ix, iy), getColor(r)
 
+
 def main():
     t0 = time.time()
     draw()
     t = time.time() - t0
     print "%dm%.3fs" % (t / 60, t % 60)
+
 
 if __name__ == "__main__":
     main()
