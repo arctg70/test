@@ -33,7 +33,7 @@ def julia_plot(C, P, d):
     #  plt.gca().axis('off')
     plt.colorbar()
     end = time.time()
-    print 'time cost:' + str(end - start) + 's'
+    print('time cost:' + str(end - start) + 's')
     plt.show()
 
 
